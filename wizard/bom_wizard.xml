@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<record id="bom_wizard_form" model="ir.ui.view">
-    <field name="name">List Product Yang Tidak Ada BoM</field>
-    <field name="model">bom.wizard</field>
-    <field name="arch" type="xml">
-        <!-- Add your xpath here -->
-        <form string="Warning List Product Without BoM">
-            <group>
-                <field name="bom_ids"/>
-            </group>
-        </form>
-    </field>
-</record>
+    <record id="bom_wizard_form" model="ir.ui.view">
+        <field name="name">List Product Yang Tidak Ada BoM</field>
+        <field name="model">bom.wizard</field>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <form string="Warning List Product Without BoM">
+                <group>
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_text">Mohon Maaf Produk Ini Tidak Mempunyai BoM</span>
+                    </div>
+                </group>
+            </form>
+        </field>
+    </record>
 
 
 
-<record id="bom_wizard" model="ir.actions.act_window" >
-    <field name="name">BoM Wizard</field>
-    <field name="type">ir.actions.act_window</field>
-    <field name="res_model">bom.wizard</field>
-    <field name="view_mode">form</field>
-    <field name="view_id" ref="bom_wizard_form"/>
-    <field name="target">new</field>
-</record>
-
-
-  <!-- <act_window id="bom_wizard"
-              name="My Wizard"
-              res_model="wizard.bom"
-              view_mode="form" target="new" view_type="form" /> -->
-
+    <record id="bom_wizard" model="ir.actions.act_window">
+        <field name="name">BoM Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bom.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="bom_wizard_form"/>
+        <field name="target">new</field>
+    </record>
 </odoo>
-
-
